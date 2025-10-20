@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryzthel Jhen Quidan Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'slate-950': '#020617',
+                        'indigo-600': '#4f46e5',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-slate-950 text-slate-100">
+    <canvas id="three-canvas"></canvas>
+
+    <div class="main-content min-h-screen p-4 sm:p-8">
+        
+        <header class="fixed top-0 left-0 right-0 z-50 p-4 flex justify-center">
+            <nav class="bg-slate-800/30 backdrop-blur-sm rounded-full p-2 flex space-x-2 border border-slate-700/50 shadow-lg" id="main-nav">
+                <a href="#home" class="nav-item flex items-center justify-center p-3 rounded-full transition-colors duration-300 text-white bg-indigo-600 shadow-xl" data-target="home">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span class="sr-only sm:not-sr-only sm:ml-2 sm:text-sm">Home</span>
+                </a>
+                <a href="#about" class="nav-item flex items-center justify-center p-3 rounded-full transition-colors duration-300 text-slate-400 hover:text-white hover:bg-slate-700/50" data-target="about">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <span class="sr-only sm:not-sr-only sm:ml-2 sm:text-sm">About</span>
+                </a>
+               <a href="#skills" class="nav-item flex items-center justify-center p-3 rounded-full transition-colors duration-300 text-slate-400 hover:text-white hover:bg-slate-700/50" data-target="skills">
+               <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil">
+               <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+               <span class="sr-only sm:not-sr-only sm:ml-2 sm:text-sm">Skills</span>
+               </a>
+                <a href="#work" class="nav-item flex items-center justify-center p-3 rounded-full transition-colors duration-300 text-slate-400 hover:text-white hover:bg-slate-700/50" data-target="work">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    <span class="sr-only sm:not-sr-only sm:ml-2 sm:text-sm">Work</span>
+                </a>
+                <a href="#contact" class="nav-item flex items-center justify-center p-3 rounded-full transition-colors duration-300 text-slate-400 hover:text-white hover:bg-slate-700/50" data-target="contact">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span class="sr-only sm:not-sr-only sm:ml-2 sm:text-sm">Contact</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="pt-24 pb-8 max-w-7xl mx-auto">
+            
+            <section id="home" class="full-screen-section flex flex-col justify-center items-center text-center">
+                <div class="profile-border-container">
+                    <div class="profile-container">
+                        <img src="./images/first.jpg" alt="Profile" class="profile-image" onerror="this.src='https://placehold.co/500x500/1e293b/a1a1aa?text=Cryzthel'" />
+                    </div>
+                </div>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-2 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 to-cyan-400 text-gradient-animation">
+                    Cryzthel Jhen Quidan
+                </h1>
+                <h2 id="animated-title-container" class="text-xl sm:text-2xl text-slate-300 font-light max-w-3xl mb-8 min-h-[2.5rem]">
+                    </h2>
+                <a href="#work" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-105">
+                    Explore My Work
+                </a>
+
+                <div class="flex space-x-4 mt-8">
+                    
+                    <a href="https://www.linkedin.com/in/cryzthel-jhen-quidan-88a34a30a/" target="_blank" aria-label="Linkedin" 
+                    class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
+                    <img src="images/linkedin-icon-logo-png-transparent.png" alt="Linkedin Logo" class="w-9 h-9"> 
+                    </a>
+                    
+                   <a href="https://github.com/Cryzthel" target="_blank" aria-label="GitHub" 
+                   class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
+                   <img src="images/github_PNG80.png" alt="GitHub Logo" class="w-9 h-9"> 
+                </a>
+
+                    <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" aria-label="Instagram" 
+                       class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
+                    <img src="images/instagram-icon-free-png.webp" alt="Instagram Logo" class="w-9 h-9"> 
+                    </a>
+
+                    <a href="mailto:quidancryztheljhen@gmail.com" aria-label="Email" 
+                       class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
+                    <img src="images/google-mail-gmail-icon-logo-symbol-free-png.webp" alt="Email Logo" class="w-9 h-9"> 
+                    </a>
+                </div>
+                </section>
+
+            <section id="about" class="full-screen-section flex items-center p-8 bg-slate-800/50 rounded-3xl backdrop-blur-sm border border-slate-700/50 shadow-xl my-16">
+                <div class="w-full">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-fuchsia-400 text-center">About Me</h2>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                        <div class="text-lg text-slate-300 leading-relaxed max-w-2xl text-center md:text-left">
+                            <p class="mb-4">
+                                Hello! My name is Cryzthel Jhen Quidan, and I am a 3rd-year BSIT student at Western Institute of Technology (WIT). I’m passionate about creating digital experiences that are both beautiful and practical. My main focus is on UI/UX design because I love transforming complex ideas into simple, user-friendly solutions.
+                            </p>
+                            <p>
+                                My interest in web design started with a fascination for how technology and art combined together. I enjoy bringing ideas to life through clean coding and designing interfaces that are easy to navigate. When I’m not working on projects, I like to keep up with the latest design trends, sketch out new concepts, or explore the outdoors, as nature often inspires my creativity. To me, good design is like having a conversation—it’s about connecting with users and making their experience meaningful. I’m always eager to learn more and improve my skills, and I look forward to creating innovative and impactful digital work.
+                            </p>
+                        </div>
+                        <div class="id-badge-container">
+                            <div class="lanyard"></div>
+                            <div class="id-card">
+                                <div class="id-header bg-indigo-600 p-2 text-center text-sm font-semibold text-white rounded-t-2xl">
+                                </div>
+                                <div class="h-80 w-60 rounded-xl overflow-hidden shadow-xl border border-slate-700/50 flex-shrink-0 mx-auto mt-3">
+                                    <img src="./images/second.jpg" alt="Cryzthel ID Photo" class="h-full w-full object-cover" onerror="this.src='https://placehold.co/600x900/1e293b/a1a1aa?text=Cryzthel'" />
+                                </div>
+                                <div class="p-3 text-center">
+                                    <p class="text-xl font-bold text-slate-50">Cryzthel Jhen F. Quidan</p>
+                                    <p class="text-sm text-fuchsia-400">BSIT Student & UI/UX Designer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            
+            <section id="skills" class="full-screen-section flex items-center p-8 rounded-3xl my-16">
+                <div class="w-full">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-indigo-400 text-center">My Skills</h2>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="0">
+                            <img src="https://img.icons8.com/color/96/figma--v1.png" alt="Figma" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">Figma</p>
+                        </div>
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="100">
+                            <img src="images/user.png" alt="User Research" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">User Research</p>
+                        </div>
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="200">
+                            <img src="images/prototype.png" alt="Prototyping" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">Prototyping</p>
+                        </div>
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="300">
+                            <img src="images/problem-solving.png" alt="Problem Solving" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">Problem Solving</p>
+                        </div>
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="400">
+                            <img src="images/brain.png" alt="Creativity" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">Creativity</p>
+                        </div>
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="500">
+                            <img src="images/sketching.png" alt="Wireframing" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">Wireframing</p>
+                        </div>
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="600">
+                            <img src="images/scenario.png" alt="User Flow" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">User Flow</p>
+                        </div>
+                        <div class="skill-item flex flex-col items-center text-center p-4 transition-all duration-700 ease-out opacity-0 translate-y-4" data-animate-on-scroll data-delay="700">
+                            <img src="images/12446498.webp" alt="UI/UX" class="w-16 h-16 mb-2"/>
+                            <p class="text-slate-200 font-medium">UI/UX</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id="work" class="full-screen-section flex items-center p-8 bg-slate-800/50 rounded-3xl backdrop-blur-sm border border-slate-700/50 shadow-xl my-16">
+                <div class="w-full">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400 text-center">Featured Work</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+                            <img src="images/26b72b9e-fa38-4e39-93c3-3a88f1522e46.jpg" alt="Western Bites" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+1'" />
+                            <div class="p-6">
+                                <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Mobile App</span>
+                                <h3 class="text-xl font-bold text-slate-50 mb-2">Western Bites</h3>
+                                <p class="text-slate-400">Food Ordering App where they can place their order and will receive it as fast as lightning.</p>
+                                <a href="https://www.figma.com/proto/XJsZKVfe0Hm7ywEgwbvENU/Western-Bites?node-id=806-481&starting-point-node-id=749%3A395&t=SanmgXP36QUdgBTY-1" target="_blank" class="project-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-300">
+                                    <span class="relative pb-0.5 project-link-text">View Project</span>
+                                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                            <div class="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-cyan-500 pointer-events-none"></div>
+                        </div>
+
+                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+                            <img src="images/cc029fcd-9a1a-4788-9604-b74a231ae2ac.jpg" alt="Academix" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+2'" />
+                            <div class="p-6">
+                                <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Web Portal</span>
+                                <h3 class="text-xl font-bold text-slate-50 mb-2">Academix</h3>
+                                <p class="text-slate-400">Discover Academix — your all-in-one student portal to view grades, manage schedules, and stay organized effortlessly!</p>
+                                <a href="https://www.figma.com/proto/Wc5OwXVNUskP1mUqJPLnKM/Pagatpat?node-id=10-33&p=f&t=cvW3tTbBTXGaMQrR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" class="project-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-300">
+                                    <span class="relative pb-0.5 project-link-text">View Project</span>
+                                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                            <div class="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-cyan-500 pointer-events-none"></div>
+                        </div>
+
+                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+                            <img src="images/9752324e-db77-4369-8438-cdd6f0d14283.jpg" alt="EmerGo" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+3'" />
+                            <div class="p-6">
+                                <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Mobile App</span>
+                                <h3 class="text-xl font-bold text-slate-50 mb-2">EmerGo</h3>
+                                <p class="text-slate-400">A Mobile App that connects you directly to emergency hotlines like fire departments, police stations, and hospitals — all in one tap.</p>
+                                <a href="https://www.figma.com/proto/K0IurhbIFm1u8aljUeozdH/Emergency-Call?node-id=1704-12737&starting-point-node-id=1704%3A12737&t=bLeLI1i0uy7Vy48J-1" target="_blank" class="project-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-300">
+                                    <span class="relative pb-0.5 project-link-text">View Project</span>
+                                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                            <div class="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-cyan-500 pointer-events-none"></div>
+                        </div>
+                        
+                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+                            <img src="images/Screenshot 2025-10-20 100218.png" alt="Portfolio Website" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+4'" />
+                            <div class="p-6">
+                                <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Web Design</span>
+                                <h3 class="text-xl font-bold text-slate-50 mb-2">Awesometodos</h3>
+                                <p class="text-slate-400">A clean and modern personal portfolio showcasing skills, projects, and a professional brand identity.</p>
+                                <a href="https://quidancryzthel-1.onrender.com" target="_blank" class="project-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-300">
+                                    <span class="relative pb-0.5 project-link-text">View Project</span>
+                                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                </a>
+                            </div>
+                            <div class="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-cyan-500 pointer-events-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="full-screen-section flex items-center p-8 rounded-3xl my-16">
+    <div class="w-full max-w-2xl mx-auto bg-slate-800/50 rounded-3xl backdrop-blur-sm border border-slate-700/50 shadow-xl p-8 sm:p-10">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-indigo-600 text-center">Get In Touch</h2>
+        
+        <form action="https://formsubmit.co/quidancryztheljhen@gmail.com" method="POST" id="contact-form">
+            
+            <input type="hidden" name="_subject" value="You received notification from your Website!">
+
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                <input type="text" id="name" name="name" required
+                       class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
+                       placeholder="Enter your name...">
+            </div>
+
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                <input type="email" id="email" name="email" required
+                       class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
+                       placeholder="email@example.com">
+            </div>
+            <div class="mb-6">
+                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                          class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
+                          placeholder="Enter your message here..."></textarea>
+            </div>
+
+            <button type="submit" 
+            class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-[1.01]">Send Message</button>
+        </form>
+    </div>
+</section>
+        </main>
+    </div>
+   <footer class="py-6 bg-gray-900 text-center text-sm text-white border-t border-slate-800">
+    <p class="mb-2">&copy; 2025 Cryzthel Jhen Quidan. All rights reserved.</p>
+</footer>
+     </p>
+</footer>
+    <script src="index.js"></script>
+</body>
+</html>
