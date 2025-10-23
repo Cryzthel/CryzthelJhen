@@ -1,9 +1,5 @@
-// index.js
-
 document.addEventListener('DOMContentLoaded', () => {
-    // ----------------------------------------------------------------------
-    // 1. Navigation and Scroll Logic
-    // ----------------------------------------------------------------------
+  
     const navItems = document.querySelectorAll('.nav-item');
     const sections = document.querySelectorAll('section');
 
@@ -28,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (targetSection) {
                 const offset = 80; 
-                // The correct way to calculate scroll position for a fixed header offset
                 const offsetPosition = targetSection.offsetTop - offset;
 
                 window.scrollTo({
@@ -41,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            // Check if the element is intersecting AND it's above the 70% mark (rootMargin)
             if (entry.isIntersecting) {
                 setActiveNavItem(entry.target.id);
             }
@@ -54,10 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
-
-    // ----------------------------------------------------------------------
-    // 2. Animated Title (Typewriter Effect) Logic
-    // ----------------------------------------------------------------------
     const titleContainer = document.getElementById('animated-title-container');
     const words = ["UI/UX Designer", "Front-end Developer", "Creative Problem Solver"]; 
     let wordIndex = 0;
@@ -101,10 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setTimeout(typeWriter, 500);
-
-    // ----------------------------------------------------------------------
-    // 3. Glitter Particle Mouse Trail Logic
-    // ----------------------------------------------------------------------
     document.addEventListener('mousemove', (e) => {
         const particle = document.createElement('div');
         particle.className = 'glitter-particle';
@@ -123,9 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500); 
     });
 
-    // ----------------------------------------------------------------------
-    // 4. Skill Animation (Intersection Observer) Logic
-    // ----------------------------------------------------------------------
     const skillItems = document.querySelectorAll('[data-animate-on-scroll]');
     
     const skillObserver = new IntersectionObserver(entries => {
@@ -149,12 +132,9 @@ document.addEventListener('DOMContentLoaded', () => {
         skillObserver.observe(item);
     });
     
-    // ----------------------------------------------------------------------
-    // 5. 3D Tilt Card Mousemove Logic (New Feature)
-    // ----------------------------------------------------------------------
     const tiltCards = document.querySelectorAll('.js-tilt-card');
-    const MAX_TILT = 5; // The maximum angle (in degrees) to tilt the card
-    const SCALE_AMOUNT = 1.05; // Amount to scale the card on hover
+    const MAX_TILT = 6; 
+    const SCALE_AMOUNT = 1.05; 
 
     tiltCards.forEach(card => {
         let isHovering = false;
@@ -166,50 +146,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         card.addEventListener('mouseenter', () => {
             isHovering = true;
-            // Start scale and reset transition
             card.style.transform = `scale(${SCALE_AMOUNT})`;
             card.style.transition = 'transform 0.1s ease-out'; 
         });
 
         card.addEventListener('mouseleave', () => {
             isHovering = false;
-            // Smoothly reset the transformation
             card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
             card.style.transition = 'transform 0.5s ease-out, box-shadow 0.5s ease-out'; 
         });
 
         function handleMouseMove(cardElement, event) {
             const rect = cardElement.getBoundingClientRect();
-            
-            // Calculate mouse position relative to the center of the card
             const xCenter = rect.left + rect.width / 2;
             const yCenter = rect.top + rect.height / 2;
             const mouseX = event.clientX;
             const mouseY = event.clientY;
-
-            // Normalize coordinates from -1 to 1 (center is 0,0)
             const xNormalized = (mouseX - xCenter) / (rect.width / 2);
             const yNormalized = (mouseY - yCenter) / (rect.height / 2);
-
-            // Calculate tilt angle: rotationX depends on Y mouse, rotationY depends on X mouse
-            const rotationX = yNormalized * -MAX_TILT; // Inverted for 3D perspective
+            const rotationX = yNormalized * -MAX_TILT; 
             const rotationY = xNormalized * MAX_TILT;
-
-            // Apply the new transform style. Use 'perspective(1000px)' for the 3D depth.
             cardElement.style.transform = 
                 `perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg) scale(${SCALE_AMOUNT})`;
             
-            // Remove the transition during live movement for a snappy feel
             cardElement.style.transition = 'none'; 
         }
     });
 
 });
-
-
-// ----------------------------------------------------------------------
-// Three.js Background Animation Logic (Kept outside DOMContentLoaded since it uses window.onload)
-// ----------------------------------------------------------------------
 
 window.onload = function() {
     const canvas = document.getElementById('three-canvas');
