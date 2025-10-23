@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
     <script>
         tailwind.config = {
             theme: {
@@ -23,8 +23,7 @@
     </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css"> 
 </head>
 <body class="bg-slate-950 text-slate-100">
     <canvas id="three-canvas"></canvas>
@@ -73,29 +72,6 @@
                 <a href="#work" class="bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-105">
                     Explore My Work
                 </a>
-
-                <div class="flex space-x-4 mt-8">
-                    
-                    <a href="https://www.linkedin.com/in/cryzthel-jhen-quidan-88a34a30a/" target="_blank" aria-label="Linkedin" 
-                    class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
-                    <img src="./images/linkedin-icon-logo-png-transparent.png" alt="Linkedin Logo" class="w-9 h-9"> 
-                    </a>
-                    
-                   <a href="https://github.com/Cryzthel" target="_blank" aria-label="GitHub" 
-                   class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
-                   <img src="./images/github_PNG80.png" alt="GitHub Logo" class="w-9 h-9"> 
-                </a>
-
-                    <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" aria-label="Instagram" 
-                       class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
-                    <img src="./images/instagram-icon-free-png.webp" alt="Instagram Logo" class="w-9 h-9"> 
-                    </a>
-
-                    <a href="mailto:quidancryztheljhen@gmail.com" aria-label="Email" 
-                       class="social-icon-circle text-white text-xl bg-slate-700 transition-all duration-300 hover:bg-white hover:scale-105 shadow-md hover:shadow-xl border-2 border-white-800">
-                    <img src="./images/google-mail-gmail-icon-logo-symbol-free-png.webp" alt="Email Logo" class="w-9 h-9"> 
-                    </a>
-                </div>
                 </section>
 
             <section id="about" class="full-screen-section flex items-center p-8 bg-slate-800/50 rounded-3xl backdrop-blur-sm border border-slate-700/50 shadow-xl my-16">
@@ -170,11 +146,13 @@
                 
             </section>
 
+
             <section id="work" class="full-screen-section flex items-center p-8 bg-slate-800/50 rounded-3xl backdrop-blur-sm border border-slate-700/50 shadow-xl my-16">
                 <div class="w-full">
                     <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400 text-center">Featured Work</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+                        
+                        <div class="js-tilt-card group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
                             <img src="images/26b72b9e-fa38-4e39-93c3-3a88f1522e46.jpg" alt="Western Bites" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+1'" />
                             <div class="p-6">
                                 <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Mobile App</span>
@@ -188,7 +166,8 @@
                             <div class="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-cyan-500 pointer-events-none"></div>
                         </div>
 
-                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+
+                        <div class="js-tilt-card group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
                             <img src="images/cc029fcd-9a1a-4788-9604-b74a231ae2ac.jpg" alt="Academix" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+2'" />
                             <div class="p-6">
                                 <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Web Portal</span>
@@ -202,7 +181,8 @@
                             <div class="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-cyan-500 pointer-events-none"></div>
                         </div>
 
-                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+
+                        <div class="js-tilt-card group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
                             <img src="images/9752324e-db77-4369-8438-cdd6f0d14283.jpg" alt="EmerGo" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+3'" />
                             <div class="p-6">
                                 <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Mobile App</span>
@@ -216,12 +196,12 @@
                             <div class="absolute inset-0 rounded-2xl border-2 border-transparent transition-all duration-500 group-hover:border-cyan-500 pointer-events-none"></div>
                         </div>
                         
-                        <div class="group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
+                        <div class="js-tilt-card group relative bg-slate-900/50 rounded-2xl overflow-hidden shadow-lg border border-slate-700/50 transition-shadow duration-500 hover:shadow-[0_0_40px_rgba(45,212,255,0.4)]">
                             <img src="images/Screenshot 2025-10-20 100218.png" alt="Portfolio Website" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='https://placehold.co/600x400/1e293b/a1a1aa?text=Project+4'" />
                             <div class="p-6">
                                 <span class="inline-block bg-cyan-700 text-xs font-semibold px-3 py-1 rounded-full mb-2 text-white">Web Design</span>
                                 <h3 class="text-xl font-bold text-slate-50 mb-2">Awesometodos</h3>
-                                <p class="text-slate-400">A checklist where you can write all the things you need to do.</p>
+                                <p class="text-slate-400">A clean and modern personal portfolio showcasing skills, projects, and a professional brand identity.</p>
                                 <a href="https://quidancryzthel-1.onrender.com" target="_blank" class="project-link mt-4 inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold transition-colors duration-300">
                                     <span class="relative pb-0.5 project-link-text">View Project</span>
                                     <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -233,46 +213,70 @@
                 </div>
             </section>
 
+
             <section id="contact" class="full-screen-section flex items-center p-8 rounded-3xl my-16">
-    <div class="w-full max-w-2xl mx-auto bg-slate-800/50 rounded-3xl backdrop-blur-sm border border-slate-700/50 shadow-xl p-8 sm:p-10">
-        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-indigo-600 text-center">Get In Touch</h2>
-        
-        <form action="https://formsubmit.co/quidancryztheljhen@gmail.com" method="POST" id="contact-form">
+        <div class="w-full max-w-2xl mx-auto bg-slate-800/50 rounded-3xl backdrop-blur-sm border border-slate-700/50 shadow-xl p-8 sm:p-10">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-indigo-600 text-center">Get In Touch</h2>
             
-            <input type="hidden" name="_subject" value="You received notification from your Website!">
+            <form action="https://formsubmit.co/quidancryztheljhen@gmail.com" method="POST" id="contact-form">
+                
+                <input type="hidden" name="_subject" value="You received notification from your Website!">
 
-            <div class="mb-4">
-                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
-                <input type="text" id="name" name="name" required
-                       class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
-                       placeholder="Enter your name...">
-            </div>
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Name</label>
+                    <input type="text" id="name" name="name" required
+                            class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
+                            placeholder="Enter your name...">
+                </div>
 
-            <div class="mb-4">
-                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
-                <input type="email" id="email" name="email" required
-                       class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
-                       placeholder="email@example.com">
-            </div>
-            <div class="mb-6">
-                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
-                <textarea id="message" name="message" rows="5" required
-                          class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
-                          placeholder="Enter your message here..."></textarea>
-            </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                    <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
+                            placeholder="email@example.com">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                                 class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200"
+                                 placeholder="Enter your message here..."></textarea>
+                </div>
 
-            <button type="submit" 
-            class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-[1.01]">Send Message</button>
-        </form>
-    </div>
+                <button type="submit" 
+                class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-[1.01]">Send Message</button>
+            </form>
+        </div>
 </section>
         </main>
     </div>
-   <footer class="py-6 bg-gray-900 text-center text-sm text-white border-t border-slate-800">
-    <p class="mb-2">&copy; 2025 Cryzthel Jhen Quidan. All rights reserved.</p>
-</footer>
-     </p>
-</footer>
-    <script src="index.js"></script>
+    
+   <footer class="py-6 bg-gray-900 text-center text-sm text-white border-t border-slate-800 flex flex-col items-center">
+        <div class="flex space-x-4 mb-4">
+            
+            <a href="https://www.linkedin.com/in/cryzthel-jhen-quidan-88a34a30a/" target="_blank" aria-label="Linkedin" 
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700/30 transition-all duration-300 hover:bg-slate-700/50 shadow-md hover:shadow-lg border-2 border-transparent hover:border-cyan-400">
+                <img src="images/linkedin-icon-logo-png-transparent.png" alt="Linkedin Logo" class="w-7 h-7 object-contain"> 
+            </a>
+            
+            <a href="https://github.com/Cryzthel" target="_blank" aria-label="GitHub" 
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700/30 transition-all duration-300 hover:bg-slate-700/50 shadow-md hover:shadow-lg border-2 border-transparent hover:border-cyan-400">
+                <img src="images/github_PNG80.png" alt="GitHub Logo" class="w-7 h-7 object-contain"> 
+            </a>
+
+            <a href="https://www.instagram.com/YOUR_HANDLE" target="_blank" aria-label="Instagram" 
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700/30 transition-all duration-300 hover:bg-slate-700/50 shadow-md hover:shadow-lg border-2 border-transparent hover:border-cyan-400">
+                <img src="images/instagram-icon-free-png.webp" alt="Instagram Logo" class="w-7 h-7 object-contain"> 
+            </a>
+
+            <a href="mailto:quidancryztheljhen@gmail.com" aria-label="Email" 
+                class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-700/30 transition-all duration-300 hover:bg-slate-700/50 shadow-md hover:shadow-lg border-2 border-transparent hover:border-cyan-400">
+                <img src="images/google-mail-gmail-icon-logo-symbol-free-png.webp" alt="Email Logo" class="w-7 h-7 object-contain"> 
+            </a>
+        </div>
+        
+        <p class="mb-2">&copy; 2025 Cryzthel Jhen Quidan. All rights reserved.</p>
+    </footer>
+    
+    <script src="index.js"></script> 
 </body>
 </html>
