@@ -2,6 +2,12 @@
 
 This is my personal portfolio website showcasing my work, skills, and experience.
 
+# Portfolio Responsive Complete
+Responsive Personal Portfolio Website HTML CSS & JavaScript.
+Contains animations when scrolling.
+Smooth scrolling in each section.
+Compatible with all mobile devices and with a beautiful and pleasant user interface.
+
 ## Project Structure
 
 - `index.html` - Main HTML file containing the website structure
@@ -28,7 +34,7 @@ Simply open the `index.html` file in a web browser to view the website.
 
 ## Author
 
-Cryzthel JH Nquidan
+Cryzthel Jhen F. Quidan
 
 ## License
 
